@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.1.1 (Python 3.10.12 on linux)" generated="2024-11-14T09:52:14.522316" rpa="false" schemaversion="5">
+<robot generator="Robot 7.1.1 (Python 3.10.12 on linux)" generated="2024-11-14T09:57:15.673916" rpa="false" schemaversion="5">
 <suite id="s1" name="Tests" source="/home/ketolana/ohtu/palautusrepositorio/webcounter/src/tests">
 <suite id="s1-s1" name="Increment" source="/home/ketolana/ohtu/palautusrepositorio/webcounter/src/tests/increment.robot">
 <kw name="Open And Configure Browser" owner="resource" type="SETUP">
 <if>
 <branch type="IF" condition="$BROWSER == 'chrome'">
 <kw name="Evaluate" owner="BuiltIn">
-<msg time="2024-11-14T09:52:14.649551" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x739c420716c0&gt;</msg>
+<msg time="2024-11-14T09:57:15.799752" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x724f0c83ae30&gt;</msg>
 <var>${options}</var>
 <arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
 <arg>sys</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2024-11-14T09:52:14.649267" elapsed="0.000321"/>
+<status status="PASS" start="2024-11-14T09:57:15.799465" elapsed="0.000326"/>
 </kw>
-<status status="PASS" start="2024-11-14T09:52:14.646327" elapsed="0.003328"/>
+<status status="PASS" start="2024-11-14T09:57:15.796468" elapsed="0.003406"/>
 </branch>
 <branch type="ELSE IF" condition="$BROWSER == 'firefox'">
 <kw name="Evaluate" owner="BuiltIn">
@@ -21,401 +21,401 @@
 <arg>sys.modules['selenium.webdriver'].FirefoxOptions()</arg>
 <arg>sys</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="NOT RUN" start="2024-11-14T09:52:14.649802" elapsed="0.000028"/>
+<status status="NOT RUN" start="2024-11-14T09:57:15.800030" elapsed="0.000029"/>
 </kw>
-<status status="NOT RUN" start="2024-11-14T09:52:14.649696" elapsed="0.000181"/>
+<status status="NOT RUN" start="2024-11-14T09:57:15.799920" elapsed="0.000186"/>
 </branch>
-<status status="PASS" start="2024-11-14T09:52:14.646299" elapsed="0.003610"/>
+<status status="PASS" start="2024-11-14T09:57:15.796443" elapsed="0.003694"/>
 </if>
 <if>
 <branch type="IF" condition="$HEADLESS == 'true'">
 <kw name="Set Selenium Speed" owner="SeleniumLibrary">
 <arg>0</arg>
 <doc>Sets the delay that is waited after each Selenium command.</doc>
-<status status="NOT RUN" start="2024-11-14T09:52:14.650151" elapsed="0.000029"/>
+<status status="PASS" start="2024-11-14T09:57:15.800365" elapsed="0.000178"/>
 </kw>
 <kw name="Call Method" owner="BuiltIn">
 <arg>${options}</arg>
 <arg>add_argument</arg>
 <arg>--headless</arg>
 <doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="NOT RUN" start="2024-11-14T09:52:14.650275" elapsed="0.000025"/>
+<status status="PASS" start="2024-11-14T09:57:15.800649" elapsed="0.000147"/>
 </kw>
-<status status="NOT RUN" start="2024-11-14T09:52:14.649965" elapsed="0.000379"/>
+<status status="PASS" start="2024-11-14T09:57:15.800191" elapsed="0.000660"/>
 </branch>
 <branch type="ELSE">
 <kw name="Set Selenium Speed" owner="SeleniumLibrary">
 <arg>${DELAY}</arg>
 <doc>Sets the delay that is waited after each Selenium command.</doc>
-<status status="PASS" start="2024-11-14T09:52:14.650458" elapsed="0.000243"/>
+<status status="NOT RUN" start="2024-11-14T09:57:15.800980" elapsed="0.000026"/>
 </kw>
-<status status="PASS" start="2024-11-14T09:52:14.650376" elapsed="0.000374"/>
+<status status="NOT RUN" start="2024-11-14T09:57:15.800885" elapsed="0.000163"/>
 </branch>
-<status status="PASS" start="2024-11-14T09:52:14.649951" elapsed="0.000830"/>
+<status status="PASS" start="2024-11-14T09:57:15.800177" elapsed="0.000900"/>
 </if>
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2024-11-14T09:52:14.651136" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
+<msg time="2024-11-14T09:57:15.801428" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
 <arg>browser=${BROWSER}</arg>
 <arg>options=${options}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2024-11-14T09:52:14.650879" elapsed="0.559932"/>
+<status status="PASS" start="2024-11-14T09:57:15.801170" elapsed="0.351794"/>
 </kw>
-<status status="PASS" start="2024-11-14T09:52:14.646092" elapsed="0.565005"/>
+<status status="PASS" start="2024-11-14T09:57:15.796234" elapsed="0.356972"/>
 </kw>
 <test id="s1-s1-t1" name="At start the counter is zero" line="7">
 <kw name="Go To" owner="SeleniumLibrary">
-<msg time="2024-11-14T09:52:15.212453" level="INFO">Opening url 'http://localhost:5001'</msg>
-<msg time="2024-11-14T09:52:16.027509" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-2.png"&gt;&lt;img src="selenium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg time="2024-11-14T09:52:16.027937" level="FAIL">WebDriverException: Message: unknown error: net::ERR_CONNECTION_REFUSED
+<msg time="2024-11-14T09:57:16.154450" level="INFO">Opening url 'http://localhost:5001'</msg>
+<msg time="2024-11-14T09:57:16.361040" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-6.png"&gt;&lt;img src="selenium-screenshot-6.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2024-11-14T09:57:16.361382" level="FAIL">WebDriverException: Message: unknown error: net::ERR_CONNECTION_REFUSED
   (Session info: chrome=130.0.6723.116)
 Stacktrace:
-#0 0x591769b7b8ca &lt;unknown&gt;
-#1 0x5917696a0860 &lt;unknown&gt;
-#2 0x591769698a61 &lt;unknown&gt;
-#3 0x591769689278 &lt;unknown&gt;
-#4 0x59176968af8a &lt;unknown&gt;
-#5 0x59176968951a &lt;unknown&gt;
-#6 0x591769688e14 &lt;unknown&gt;
-#7 0x591769688d32 &lt;unknown&gt;
-#8 0x591769686e2c &lt;unknown&gt;
-#9 0x59176968747a &lt;unknown&gt;
-#10 0x5917696a3109 &lt;unknown&gt;
-#11 0x59176972f705 &lt;unknown&gt;
-#12 0x5917697104d2 &lt;unknown&gt;
-#13 0x59176972ea9b &lt;unknown&gt;
-#14 0x591769710273 &lt;unknown&gt;
-#15 0x5917696df362 &lt;unknown&gt;
-#16 0x5917696e033e &lt;unknown&gt;
-#17 0x591769b4a2df &lt;unknown&gt;
-#18 0x591769b4ede2 &lt;unknown&gt;
-#19 0x591769b38167 &lt;unknown&gt;
-#20 0x591769b4f561 &lt;unknown&gt;
-#21 0x591769b1f2de &lt;unknown&gt;
-#22 0x591769b6ab78 &lt;unknown&gt;
-#23 0x591769b6ad7a &lt;unknown&gt;
-#24 0x591769b7a57c &lt;unknown&gt;
-#25 0x7fe22ea94ac3 &lt;unknown&gt;
+#0 0x62cbceef48ca &lt;unknown&gt;
+#1 0x62cbcea19860 &lt;unknown&gt;
+#2 0x62cbcea11a61 &lt;unknown&gt;
+#3 0x62cbcea02278 &lt;unknown&gt;
+#4 0x62cbcea03f8a &lt;unknown&gt;
+#5 0x62cbcea0251a &lt;unknown&gt;
+#6 0x62cbcea01e14 &lt;unknown&gt;
+#7 0x62cbcea01d32 &lt;unknown&gt;
+#8 0x62cbce9ffe2c &lt;unknown&gt;
+#9 0x62cbcea0047a &lt;unknown&gt;
+#10 0x62cbcea1c109 &lt;unknown&gt;
+#11 0x62cbceaa8705 &lt;unknown&gt;
+#12 0x62cbcea894d2 &lt;unknown&gt;
+#13 0x62cbceaa7a9b &lt;unknown&gt;
+#14 0x62cbcea89273 &lt;unknown&gt;
+#15 0x62cbcea58362 &lt;unknown&gt;
+#16 0x62cbcea5933e &lt;unknown&gt;
+#17 0x62cbceec32df &lt;unknown&gt;
+#18 0x62cbceec7de2 &lt;unknown&gt;
+#19 0x62cbceeb1167 &lt;unknown&gt;
+#20 0x62cbceec8561 &lt;unknown&gt;
+#21 0x62cbcee982de &lt;unknown&gt;
+#22 0x62cbceee3b78 &lt;unknown&gt;
+#23 0x62cbceee3d7a &lt;unknown&gt;
+#24 0x62cbceef357c &lt;unknown&gt;
+#25 0x7c89c2294ac3 &lt;unknown&gt;
 </msg>
 <arg>${HOME_URL}</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<status status="FAIL" start="2024-11-14T09:52:15.212089" elapsed="0.817527">WebDriverException: Message: unknown error: net::ERR_CONNECTION_REFUSED
+<status status="FAIL" start="2024-11-14T09:57:16.154118" elapsed="0.208611">WebDriverException: Message: unknown error: net::ERR_CONNECTION_REFUSED
   (Session info: chrome=130.0.6723.116)
 Stacktrace:
-#0 0x591769b7b8ca &lt;unknown&gt;
-#1 0x5917696a0860 &lt;unknown&gt;
-#2 0x591769698a61 &lt;unknown&gt;
-#3 0x591769689278 &lt;unknown&gt;
-#4 0x59176968af8a &lt;unknown&gt;
-#5 0x59176968951a &lt;unknown&gt;
-#6 0x591769688e14 &lt;unknown&gt;
-#7 0x591769688d32 &lt;unknown&gt;
-#8 0x591769686e2c &lt;unknown&gt;
-#9 0x59176968747a &lt;unknown&gt;
-#10 0x5917696a3109 &lt;unknown&gt;
-#11 0x59176972f705 &lt;unknown&gt;
-#12 0x5917697104d2 &lt;unknown&gt;
-#13 0x59176972ea9b &lt;unknown&gt;
-#14 0x591769710273 &lt;unknown&gt;
-#15 0x5917696df362 &lt;unknown&gt;
-#16 0x5917696e033e &lt;unknown&gt;
-#17 0x591769b4a2df &lt;unknown&gt;
-#18 0x591769b4ede2 &lt;unknown&gt;
-#19 0x591769b38167 &lt;unknown&gt;
-#20 0x591769b4f561 &lt;unknown&gt;
-#21 0x591769b1f2de &lt;unknown&gt;
-#22 0x591769b6ab78 &lt;unknown&gt;
-#23 0x591769b6ad7a &lt;unknown&gt;
-#24 0x591769b7a57c &lt;unknown&gt;
-#25 0x7fe22ea94ac3 &lt;unknown&gt;
+#0 0x62cbceef48ca &lt;unknown&gt;
+#1 0x62cbcea19860 &lt;unknown&gt;
+#2 0x62cbcea11a61 &lt;unknown&gt;
+#3 0x62cbcea02278 &lt;unknown&gt;
+#4 0x62cbcea03f8a &lt;unknown&gt;
+#5 0x62cbcea0251a &lt;unknown&gt;
+#6 0x62cbcea01e14 &lt;unknown&gt;
+#7 0x62cbcea01d32 &lt;unknown&gt;
+#8 0x62cbce9ffe2c &lt;unknown&gt;
+#9 0x62cbcea0047a &lt;unknown&gt;
+#10 0x62cbcea1c109 &lt;unknown&gt;
+#11 0x62cbceaa8705 &lt;unknown&gt;
+#12 0x62cbcea894d2 &lt;unknown&gt;
+#13 0x62cbceaa7a9b &lt;unknown&gt;
+#14 0x62cbcea89273 &lt;unknown&gt;
+#15 0x62cbcea58362 &lt;unknown&gt;
+#16 0x62cbcea5933e &lt;unknown&gt;
+#17 0x62cbceec32df &lt;unknown&gt;
+#18 0x62cbceec7de2 &lt;unknown&gt;
+#19 0x62cbceeb1167 &lt;unknown&gt;
+#20 0x62cbceec8561 &lt;unknown&gt;
+#21 0x62cbcee982de &lt;unknown&gt;
+#22 0x62cbceee3b78 &lt;unknown&gt;
+#23 0x62cbceee3d7a &lt;unknown&gt;
+#24 0x62cbceef357c &lt;unknown&gt;
+#25 0x7c89c2294ac3 &lt;unknown&gt;
 </status>
 </kw>
 <kw name="Title Should Be" owner="SeleniumLibrary">
 <arg>Laskuri</arg>
 <doc>Verifies that the current page title equals ``title``.</doc>
-<status status="NOT RUN" start="2024-11-14T09:52:16.030241" elapsed="0.000100"/>
+<status status="NOT RUN" start="2024-11-14T09:57:16.363237" elapsed="0.000077"/>
 </kw>
 <kw name="Page Should Contain" owner="SeleniumLibrary">
 <arg>nappia painettu 0 kertaa</arg>
 <doc>Verifies that current page contains ``text``.</doc>
-<status status="NOT RUN" start="2024-11-14T09:52:16.030722" elapsed="0.000074"/>
+<status status="NOT RUN" start="2024-11-14T09:57:16.363597" elapsed="0.000060"/>
 </kw>
-<status status="FAIL" start="2024-11-14T09:52:15.211297" elapsed="0.820008">WebDriverException: Message: unknown error: net::ERR_CONNECTION_REFUSED
+<status status="FAIL" start="2024-11-14T09:57:16.153387" elapsed="0.210690">WebDriverException: Message: unknown error: net::ERR_CONNECTION_REFUSED
   (Session info: chrome=130.0.6723.116)
 Stacktrace:
-#0 0x591769b7b8ca &lt;unknown&gt;
-#1 0x5917696a0860 &lt;unknown&gt;
-#2 0x591769698a61 &lt;unknown&gt;
-#3 0x591769689278 &lt;unknown&gt;
-#4 0x59176968af8a &lt;unknown&gt;
-#5 0x59176968951a &lt;unknown&gt;
-#6 0x591769688e14 &lt;unknown&gt;
-#7 0x591769688d32 &lt;unknown&gt;
-#8 0x591769686e2c &lt;unknown&gt;
-#9 0x59176968747a &lt;unknown&gt;
-#10 0x5917696a3109 &lt;unknown&gt;
-#11 0x59176972f705 &lt;unknown&gt;
-#12 0x5917697104d2 &lt;unknown&gt;
-#13 0x59176972ea9b &lt;unknown&gt;
-#14 0x591769710273 &lt;unknown&gt;
-#15 0x5917696df362 &lt;unknown&gt;
-#16 0x5917696e033e &lt;unknown&gt;
-#17 0x591769b4a2df &lt;unknown&gt;
-#18 0x591769b4ede2 &lt;unknown&gt;
-#19 0x591769b38167 &lt;unknown&gt;
-#20 0x591769b4f561 &lt;unknown&gt;
-#21 0x591769b1f2de &lt;unknown&gt;
-#22 0x591769b6ab78 &lt;unknown&gt;
-#23 0x591769b6ad7a &lt;unknown&gt;
-#24 0x591769b7a57c &lt;unknown&gt;
-#25 0x7fe22ea94ac3 &lt;unknown&gt;
+#0 0x62cbceef48ca &lt;unknown&gt;
+#1 0x62cbcea19860 &lt;unknown&gt;
+#2 0x62cbcea11a61 &lt;unknown&gt;
+#3 0x62cbcea02278 &lt;unknown&gt;
+#4 0x62cbcea03f8a &lt;unknown&gt;
+#5 0x62cbcea0251a &lt;unknown&gt;
+#6 0x62cbcea01e14 &lt;unknown&gt;
+#7 0x62cbcea01d32 &lt;unknown&gt;
+#8 0x62cbce9ffe2c &lt;unknown&gt;
+#9 0x62cbcea0047a &lt;unknown&gt;
+#10 0x62cbcea1c109 &lt;unknown&gt;
+#11 0x62cbceaa8705 &lt;unknown&gt;
+#12 0x62cbcea894d2 &lt;unknown&gt;
+#13 0x62cbceaa7a9b &lt;unknown&gt;
+#14 0x62cbcea89273 &lt;unknown&gt;
+#15 0x62cbcea58362 &lt;unknown&gt;
+#16 0x62cbcea5933e &lt;unknown&gt;
+#17 0x62cbceec32df &lt;unknown&gt;
+#18 0x62cbceec7de2 &lt;unknown&gt;
+#19 0x62cbceeb1167 &lt;unknown&gt;
+#20 0x62cbceec8561 &lt;unknown&gt;
+#21 0x62cbcee982de &lt;unknown&gt;
+#22 0x62cbceee3b78 &lt;unknown&gt;
+#23 0x62cbceee3d7a &lt;unknown&gt;
+#24 0x62cbceef357c &lt;unknown&gt;
+#25 0x7c89c2294ac3 &lt;unknown&gt;
 </status>
 </test>
 <test id="s1-s1-t2" name="When button pressed twice the counter is two" line="12">
 <kw name="Go To" owner="SeleniumLibrary">
-<msg time="2024-11-14T09:52:16.033195" level="INFO">Opening url 'http://localhost:5001'</msg>
-<msg time="2024-11-14T09:52:16.762046" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-3.png"&gt;&lt;img src="selenium-screenshot-3.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg time="2024-11-14T09:52:16.762403" level="FAIL">WebDriverException: Message: unknown error: net::ERR_CONNECTION_REFUSED
+<msg time="2024-11-14T09:57:16.365588" level="INFO">Opening url 'http://localhost:5001'</msg>
+<msg time="2024-11-14T09:57:16.574876" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-7.png"&gt;&lt;img src="selenium-screenshot-7.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2024-11-14T09:57:16.575212" level="FAIL">WebDriverException: Message: unknown error: net::ERR_CONNECTION_REFUSED
   (Session info: chrome=130.0.6723.116)
 Stacktrace:
-#0 0x591769b7b8ca &lt;unknown&gt;
-#1 0x5917696a0860 &lt;unknown&gt;
-#2 0x591769698a61 &lt;unknown&gt;
-#3 0x591769689278 &lt;unknown&gt;
-#4 0x59176968af8a &lt;unknown&gt;
-#5 0x59176968951a &lt;unknown&gt;
-#6 0x591769688e14 &lt;unknown&gt;
-#7 0x591769688d32 &lt;unknown&gt;
-#8 0x591769686e2c &lt;unknown&gt;
-#9 0x59176968747a &lt;unknown&gt;
-#10 0x5917696a3109 &lt;unknown&gt;
-#11 0x59176972f705 &lt;unknown&gt;
-#12 0x5917697104d2 &lt;unknown&gt;
-#13 0x59176972ea9b &lt;unknown&gt;
-#14 0x591769710273 &lt;unknown&gt;
-#15 0x5917696df362 &lt;unknown&gt;
-#16 0x5917696e033e &lt;unknown&gt;
-#17 0x591769b4a2df &lt;unknown&gt;
-#18 0x591769b4ede2 &lt;unknown&gt;
-#19 0x591769b38167 &lt;unknown&gt;
-#20 0x591769b4f561 &lt;unknown&gt;
-#21 0x591769b1f2de &lt;unknown&gt;
-#22 0x591769b6ab78 &lt;unknown&gt;
-#23 0x591769b6ad7a &lt;unknown&gt;
-#24 0x591769b7a57c &lt;unknown&gt;
-#25 0x7fe22ea94ac3 &lt;unknown&gt;
+#0 0x62cbceef48ca &lt;unknown&gt;
+#1 0x62cbcea19860 &lt;unknown&gt;
+#2 0x62cbcea11a61 &lt;unknown&gt;
+#3 0x62cbcea02278 &lt;unknown&gt;
+#4 0x62cbcea03f8a &lt;unknown&gt;
+#5 0x62cbcea0251a &lt;unknown&gt;
+#6 0x62cbcea01e14 &lt;unknown&gt;
+#7 0x62cbcea01d32 &lt;unknown&gt;
+#8 0x62cbce9ffe2c &lt;unknown&gt;
+#9 0x62cbcea0047a &lt;unknown&gt;
+#10 0x62cbcea1c109 &lt;unknown&gt;
+#11 0x62cbceaa8705 &lt;unknown&gt;
+#12 0x62cbcea894d2 &lt;unknown&gt;
+#13 0x62cbceaa7a9b &lt;unknown&gt;
+#14 0x62cbcea89273 &lt;unknown&gt;
+#15 0x62cbcea58362 &lt;unknown&gt;
+#16 0x62cbcea5933e &lt;unknown&gt;
+#17 0x62cbceec32df &lt;unknown&gt;
+#18 0x62cbceec7de2 &lt;unknown&gt;
+#19 0x62cbceeb1167 &lt;unknown&gt;
+#20 0x62cbceec8561 &lt;unknown&gt;
+#21 0x62cbcee982de &lt;unknown&gt;
+#22 0x62cbceee3b78 &lt;unknown&gt;
+#23 0x62cbceee3d7a &lt;unknown&gt;
+#24 0x62cbceef357c &lt;unknown&gt;
+#25 0x7c89c2294ac3 &lt;unknown&gt;
 </msg>
 <arg>${HOME_URL}</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<status status="FAIL" start="2024-11-14T09:52:16.032752" elapsed="0.730084">WebDriverException: Message: unknown error: net::ERR_CONNECTION_REFUSED
+<status status="FAIL" start="2024-11-14T09:57:16.365235" elapsed="0.210381">WebDriverException: Message: unknown error: net::ERR_CONNECTION_REFUSED
   (Session info: chrome=130.0.6723.116)
 Stacktrace:
-#0 0x591769b7b8ca &lt;unknown&gt;
-#1 0x5917696a0860 &lt;unknown&gt;
-#2 0x591769698a61 &lt;unknown&gt;
-#3 0x591769689278 &lt;unknown&gt;
-#4 0x59176968af8a &lt;unknown&gt;
-#5 0x59176968951a &lt;unknown&gt;
-#6 0x591769688e14 &lt;unknown&gt;
-#7 0x591769688d32 &lt;unknown&gt;
-#8 0x591769686e2c &lt;unknown&gt;
-#9 0x59176968747a &lt;unknown&gt;
-#10 0x5917696a3109 &lt;unknown&gt;
-#11 0x59176972f705 &lt;unknown&gt;
-#12 0x5917697104d2 &lt;unknown&gt;
-#13 0x59176972ea9b &lt;unknown&gt;
-#14 0x591769710273 &lt;unknown&gt;
-#15 0x5917696df362 &lt;unknown&gt;
-#16 0x5917696e033e &lt;unknown&gt;
-#17 0x591769b4a2df &lt;unknown&gt;
-#18 0x591769b4ede2 &lt;unknown&gt;
-#19 0x591769b38167 &lt;unknown&gt;
-#20 0x591769b4f561 &lt;unknown&gt;
-#21 0x591769b1f2de &lt;unknown&gt;
-#22 0x591769b6ab78 &lt;unknown&gt;
-#23 0x591769b6ad7a &lt;unknown&gt;
-#24 0x591769b7a57c &lt;unknown&gt;
-#25 0x7fe22ea94ac3 &lt;unknown&gt;
+#0 0x62cbceef48ca &lt;unknown&gt;
+#1 0x62cbcea19860 &lt;unknown&gt;
+#2 0x62cbcea11a61 &lt;unknown&gt;
+#3 0x62cbcea02278 &lt;unknown&gt;
+#4 0x62cbcea03f8a &lt;unknown&gt;
+#5 0x62cbcea0251a &lt;unknown&gt;
+#6 0x62cbcea01e14 &lt;unknown&gt;
+#7 0x62cbcea01d32 &lt;unknown&gt;
+#8 0x62cbce9ffe2c &lt;unknown&gt;
+#9 0x62cbcea0047a &lt;unknown&gt;
+#10 0x62cbcea1c109 &lt;unknown&gt;
+#11 0x62cbceaa8705 &lt;unknown&gt;
+#12 0x62cbcea894d2 &lt;unknown&gt;
+#13 0x62cbceaa7a9b &lt;unknown&gt;
+#14 0x62cbcea89273 &lt;unknown&gt;
+#15 0x62cbcea58362 &lt;unknown&gt;
+#16 0x62cbcea5933e &lt;unknown&gt;
+#17 0x62cbceec32df &lt;unknown&gt;
+#18 0x62cbceec7de2 &lt;unknown&gt;
+#19 0x62cbceeb1167 &lt;unknown&gt;
+#20 0x62cbceec8561 &lt;unknown&gt;
+#21 0x62cbcee982de &lt;unknown&gt;
+#22 0x62cbceee3b78 &lt;unknown&gt;
+#23 0x62cbceee3d7a &lt;unknown&gt;
+#24 0x62cbceef357c &lt;unknown&gt;
+#25 0x7c89c2294ac3 &lt;unknown&gt;
 </status>
 </kw>
 <kw name="Click Button" owner="SeleniumLibrary">
 <arg>Paina</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="NOT RUN" start="2024-11-14T09:52:16.763385" elapsed="0.000088"/>
+<status status="NOT RUN" start="2024-11-14T09:57:16.576123" elapsed="0.000077"/>
 </kw>
 <kw name="Click Button" owner="SeleniumLibrary">
 <arg>Paina</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="NOT RUN" start="2024-11-14T09:52:16.763778" elapsed="0.000061"/>
+<status status="NOT RUN" start="2024-11-14T09:57:16.576488" elapsed="0.000056"/>
 </kw>
 <kw name="Page Should Contain" owner="SeleniumLibrary">
 <arg>nappia painettu 2 kertaa</arg>
 <doc>Verifies that current page contains ``text``.</doc>
-<status status="NOT RUN" start="2024-11-14T09:52:16.764118" elapsed="0.000059"/>
+<status status="NOT RUN" start="2024-11-14T09:57:16.576797" elapsed="0.000075"/>
 </kw>
-<status status="FAIL" start="2024-11-14T09:52:16.031994" elapsed="0.732587">WebDriverException: Message: unknown error: net::ERR_CONNECTION_REFUSED
+<status status="FAIL" start="2024-11-14T09:57:16.364590" elapsed="0.212673">WebDriverException: Message: unknown error: net::ERR_CONNECTION_REFUSED
   (Session info: chrome=130.0.6723.116)
 Stacktrace:
-#0 0x591769b7b8ca &lt;unknown&gt;
-#1 0x5917696a0860 &lt;unknown&gt;
-#2 0x591769698a61 &lt;unknown&gt;
-#3 0x591769689278 &lt;unknown&gt;
-#4 0x59176968af8a &lt;unknown&gt;
-#5 0x59176968951a &lt;unknown&gt;
-#6 0x591769688e14 &lt;unknown&gt;
-#7 0x591769688d32 &lt;unknown&gt;
-#8 0x591769686e2c &lt;unknown&gt;
-#9 0x59176968747a &lt;unknown&gt;
-#10 0x5917696a3109 &lt;unknown&gt;
-#11 0x59176972f705 &lt;unknown&gt;
-#12 0x5917697104d2 &lt;unknown&gt;
-#13 0x59176972ea9b &lt;unknown&gt;
-#14 0x591769710273 &lt;unknown&gt;
-#15 0x5917696df362 &lt;unknown&gt;
-#16 0x5917696e033e &lt;unknown&gt;
-#17 0x591769b4a2df &lt;unknown&gt;
-#18 0x591769b4ede2 &lt;unknown&gt;
-#19 0x591769b38167 &lt;unknown&gt;
-#20 0x591769b4f561 &lt;unknown&gt;
-#21 0x591769b1f2de &lt;unknown&gt;
-#22 0x591769b6ab78 &lt;unknown&gt;
-#23 0x591769b6ad7a &lt;unknown&gt;
-#24 0x591769b7a57c &lt;unknown&gt;
-#25 0x7fe22ea94ac3 &lt;unknown&gt;
+#0 0x62cbceef48ca &lt;unknown&gt;
+#1 0x62cbcea19860 &lt;unknown&gt;
+#2 0x62cbcea11a61 &lt;unknown&gt;
+#3 0x62cbcea02278 &lt;unknown&gt;
+#4 0x62cbcea03f8a &lt;unknown&gt;
+#5 0x62cbcea0251a &lt;unknown&gt;
+#6 0x62cbcea01e14 &lt;unknown&gt;
+#7 0x62cbcea01d32 &lt;unknown&gt;
+#8 0x62cbce9ffe2c &lt;unknown&gt;
+#9 0x62cbcea0047a &lt;unknown&gt;
+#10 0x62cbcea1c109 &lt;unknown&gt;
+#11 0x62cbceaa8705 &lt;unknown&gt;
+#12 0x62cbcea894d2 &lt;unknown&gt;
+#13 0x62cbceaa7a9b &lt;unknown&gt;
+#14 0x62cbcea89273 &lt;unknown&gt;
+#15 0x62cbcea58362 &lt;unknown&gt;
+#16 0x62cbcea5933e &lt;unknown&gt;
+#17 0x62cbceec32df &lt;unknown&gt;
+#18 0x62cbceec7de2 &lt;unknown&gt;
+#19 0x62cbceeb1167 &lt;unknown&gt;
+#20 0x62cbceec8561 &lt;unknown&gt;
+#21 0x62cbcee982de &lt;unknown&gt;
+#22 0x62cbceee3b78 &lt;unknown&gt;
+#23 0x62cbceee3d7a &lt;unknown&gt;
+#24 0x62cbceef357c &lt;unknown&gt;
+#25 0x7c89c2294ac3 &lt;unknown&gt;
 </status>
 </test>
 <test id="s1-s1-t3" name="When value set the counter is value" line="18">
 <kw name="Go To" owner="SeleniumLibrary">
-<msg time="2024-11-14T09:52:16.768128" level="INFO">Opening url 'http://localhost:5001'</msg>
-<msg time="2024-11-14T09:52:17.511730" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-4.png"&gt;&lt;img src="selenium-screenshot-4.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg time="2024-11-14T09:52:17.512127" level="FAIL">WebDriverException: Message: unknown error: net::ERR_CONNECTION_REFUSED
+<msg time="2024-11-14T09:57:16.580076" level="INFO">Opening url 'http://localhost:5001'</msg>
+<msg time="2024-11-14T09:57:16.759616" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-8.png"&gt;&lt;img src="selenium-screenshot-8.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2024-11-14T09:57:16.759966" level="FAIL">WebDriverException: Message: unknown error: net::ERR_CONNECTION_REFUSED
   (Session info: chrome=130.0.6723.116)
 Stacktrace:
-#0 0x591769b7b8ca &lt;unknown&gt;
-#1 0x5917696a0860 &lt;unknown&gt;
-#2 0x591769698a61 &lt;unknown&gt;
-#3 0x591769689278 &lt;unknown&gt;
-#4 0x59176968af8a &lt;unknown&gt;
-#5 0x59176968951a &lt;unknown&gt;
-#6 0x591769688e14 &lt;unknown&gt;
-#7 0x591769688d32 &lt;unknown&gt;
-#8 0x591769686e2c &lt;unknown&gt;
-#9 0x59176968747a &lt;unknown&gt;
-#10 0x5917696a3109 &lt;unknown&gt;
-#11 0x59176972f705 &lt;unknown&gt;
-#12 0x5917697104d2 &lt;unknown&gt;
-#13 0x59176972ea9b &lt;unknown&gt;
-#14 0x591769710273 &lt;unknown&gt;
-#15 0x5917696df362 &lt;unknown&gt;
-#16 0x5917696e033e &lt;unknown&gt;
-#17 0x591769b4a2df &lt;unknown&gt;
-#18 0x591769b4ede2 &lt;unknown&gt;
-#19 0x591769b38167 &lt;unknown&gt;
-#20 0x591769b4f561 &lt;unknown&gt;
-#21 0x591769b1f2de &lt;unknown&gt;
-#22 0x591769b6ab78 &lt;unknown&gt;
-#23 0x591769b6ad7a &lt;unknown&gt;
-#24 0x591769b7a57c &lt;unknown&gt;
-#25 0x7fe22ea94ac3 &lt;unknown&gt;
+#0 0x62cbceef48ca &lt;unknown&gt;
+#1 0x62cbcea19860 &lt;unknown&gt;
+#2 0x62cbcea11a61 &lt;unknown&gt;
+#3 0x62cbcea02278 &lt;unknown&gt;
+#4 0x62cbcea03f8a &lt;unknown&gt;
+#5 0x62cbcea0251a &lt;unknown&gt;
+#6 0x62cbcea01e14 &lt;unknown&gt;
+#7 0x62cbcea01d32 &lt;unknown&gt;
+#8 0x62cbce9ffe2c &lt;unknown&gt;
+#9 0x62cbcea0047a &lt;unknown&gt;
+#10 0x62cbcea1c109 &lt;unknown&gt;
+#11 0x62cbceaa8705 &lt;unknown&gt;
+#12 0x62cbcea894d2 &lt;unknown&gt;
+#13 0x62cbceaa7a9b &lt;unknown&gt;
+#14 0x62cbcea89273 &lt;unknown&gt;
+#15 0x62cbcea58362 &lt;unknown&gt;
+#16 0x62cbcea5933e &lt;unknown&gt;
+#17 0x62cbceec32df &lt;unknown&gt;
+#18 0x62cbceec7de2 &lt;unknown&gt;
+#19 0x62cbceeb1167 &lt;unknown&gt;
+#20 0x62cbceec8561 &lt;unknown&gt;
+#21 0x62cbcee982de &lt;unknown&gt;
+#22 0x62cbceee3b78 &lt;unknown&gt;
+#23 0x62cbceee3d7a &lt;unknown&gt;
+#24 0x62cbceef357c &lt;unknown&gt;
+#25 0x7c89c2294ac3 &lt;unknown&gt;
 </msg>
 <arg>${HOME_URL}</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<status status="FAIL" start="2024-11-14T09:52:16.765942" elapsed="0.746564">WebDriverException: Message: unknown error: net::ERR_CONNECTION_REFUSED
+<status status="FAIL" start="2024-11-14T09:57:16.578413" elapsed="0.181876">WebDriverException: Message: unknown error: net::ERR_CONNECTION_REFUSED
   (Session info: chrome=130.0.6723.116)
 Stacktrace:
-#0 0x591769b7b8ca &lt;unknown&gt;
-#1 0x5917696a0860 &lt;unknown&gt;
-#2 0x591769698a61 &lt;unknown&gt;
-#3 0x591769689278 &lt;unknown&gt;
-#4 0x59176968af8a &lt;unknown&gt;
-#5 0x59176968951a &lt;unknown&gt;
-#6 0x591769688e14 &lt;unknown&gt;
-#7 0x591769688d32 &lt;unknown&gt;
-#8 0x591769686e2c &lt;unknown&gt;
-#9 0x59176968747a &lt;unknown&gt;
-#10 0x5917696a3109 &lt;unknown&gt;
-#11 0x59176972f705 &lt;unknown&gt;
-#12 0x5917697104d2 &lt;unknown&gt;
-#13 0x59176972ea9b &lt;unknown&gt;
-#14 0x591769710273 &lt;unknown&gt;
-#15 0x5917696df362 &lt;unknown&gt;
-#16 0x5917696e033e &lt;unknown&gt;
-#17 0x591769b4a2df &lt;unknown&gt;
-#18 0x591769b4ede2 &lt;unknown&gt;
-#19 0x591769b38167 &lt;unknown&gt;
-#20 0x591769b4f561 &lt;unknown&gt;
-#21 0x591769b1f2de &lt;unknown&gt;
-#22 0x591769b6ab78 &lt;unknown&gt;
-#23 0x591769b6ad7a &lt;unknown&gt;
-#24 0x591769b7a57c &lt;unknown&gt;
-#25 0x7fe22ea94ac3 &lt;unknown&gt;
+#0 0x62cbceef48ca &lt;unknown&gt;
+#1 0x62cbcea19860 &lt;unknown&gt;
+#2 0x62cbcea11a61 &lt;unknown&gt;
+#3 0x62cbcea02278 &lt;unknown&gt;
+#4 0x62cbcea03f8a &lt;unknown&gt;
+#5 0x62cbcea0251a &lt;unknown&gt;
+#6 0x62cbcea01e14 &lt;unknown&gt;
+#7 0x62cbcea01d32 &lt;unknown&gt;
+#8 0x62cbce9ffe2c &lt;unknown&gt;
+#9 0x62cbcea0047a &lt;unknown&gt;
+#10 0x62cbcea1c109 &lt;unknown&gt;
+#11 0x62cbceaa8705 &lt;unknown&gt;
+#12 0x62cbcea894d2 &lt;unknown&gt;
+#13 0x62cbceaa7a9b &lt;unknown&gt;
+#14 0x62cbcea89273 &lt;unknown&gt;
+#15 0x62cbcea58362 &lt;unknown&gt;
+#16 0x62cbcea5933e &lt;unknown&gt;
+#17 0x62cbceec32df &lt;unknown&gt;
+#18 0x62cbceec7de2 &lt;unknown&gt;
+#19 0x62cbceeb1167 &lt;unknown&gt;
+#20 0x62cbceec8561 &lt;unknown&gt;
+#21 0x62cbcee982de &lt;unknown&gt;
+#22 0x62cbceee3b78 &lt;unknown&gt;
+#23 0x62cbceee3d7a &lt;unknown&gt;
+#24 0x62cbceef357c &lt;unknown&gt;
+#25 0x7c89c2294ac3 &lt;unknown&gt;
 </status>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
 <arg>value</arg>
 <arg>10</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="NOT RUN" start="2024-11-14T09:52:17.513108" elapsed="0.000104"/>
+<status status="NOT RUN" start="2024-11-14T09:57:16.760791" elapsed="0.000085"/>
 </kw>
 <kw name="Click Button" owner="SeleniumLibrary">
-<arg>Submit</arg>
+<arg>Aseta</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="NOT RUN" start="2024-11-14T09:52:17.513563" elapsed="0.000066"/>
+<status status="NOT RUN" start="2024-11-14T09:57:16.761149" elapsed="0.000052"/>
 </kw>
 <kw name="Page Should Contain" owner="SeleniumLibrary">
-<arg>nappia painettu 2 kertaa</arg>
+<arg>nappia painettu 10 kertaa</arg>
 <doc>Verifies that current page contains ``text``.</doc>
-<status status="NOT RUN" start="2024-11-14T09:52:17.513925" elapsed="0.000063"/>
+<status status="NOT RUN" start="2024-11-14T09:57:16.761424" elapsed="0.000049"/>
 </kw>
-<status status="FAIL" start="2024-11-14T09:52:16.765242" elapsed="0.749320">WebDriverException: Message: unknown error: net::ERR_CONNECTION_REFUSED
+<status status="FAIL" start="2024-11-14T09:57:16.577785" elapsed="0.184053">WebDriverException: Message: unknown error: net::ERR_CONNECTION_REFUSED
   (Session info: chrome=130.0.6723.116)
 Stacktrace:
-#0 0x591769b7b8ca &lt;unknown&gt;
-#1 0x5917696a0860 &lt;unknown&gt;
-#2 0x591769698a61 &lt;unknown&gt;
-#3 0x591769689278 &lt;unknown&gt;
-#4 0x59176968af8a &lt;unknown&gt;
-#5 0x59176968951a &lt;unknown&gt;
-#6 0x591769688e14 &lt;unknown&gt;
-#7 0x591769688d32 &lt;unknown&gt;
-#8 0x591769686e2c &lt;unknown&gt;
-#9 0x59176968747a &lt;unknown&gt;
-#10 0x5917696a3109 &lt;unknown&gt;
-#11 0x59176972f705 &lt;unknown&gt;
-#12 0x5917697104d2 &lt;unknown&gt;
-#13 0x59176972ea9b &lt;unknown&gt;
-#14 0x591769710273 &lt;unknown&gt;
-#15 0x5917696df362 &lt;unknown&gt;
-#16 0x5917696e033e &lt;unknown&gt;
-#17 0x591769b4a2df &lt;unknown&gt;
-#18 0x591769b4ede2 &lt;unknown&gt;
-#19 0x591769b38167 &lt;unknown&gt;
-#20 0x591769b4f561 &lt;unknown&gt;
-#21 0x591769b1f2de &lt;unknown&gt;
-#22 0x591769b6ab78 &lt;unknown&gt;
-#23 0x591769b6ad7a &lt;unknown&gt;
-#24 0x591769b7a57c &lt;unknown&gt;
-#25 0x7fe22ea94ac3 &lt;unknown&gt;
+#0 0x62cbceef48ca &lt;unknown&gt;
+#1 0x62cbcea19860 &lt;unknown&gt;
+#2 0x62cbcea11a61 &lt;unknown&gt;
+#3 0x62cbcea02278 &lt;unknown&gt;
+#4 0x62cbcea03f8a &lt;unknown&gt;
+#5 0x62cbcea0251a &lt;unknown&gt;
+#6 0x62cbcea01e14 &lt;unknown&gt;
+#7 0x62cbcea01d32 &lt;unknown&gt;
+#8 0x62cbce9ffe2c &lt;unknown&gt;
+#9 0x62cbcea0047a &lt;unknown&gt;
+#10 0x62cbcea1c109 &lt;unknown&gt;
+#11 0x62cbceaa8705 &lt;unknown&gt;
+#12 0x62cbcea894d2 &lt;unknown&gt;
+#13 0x62cbceaa7a9b &lt;unknown&gt;
+#14 0x62cbcea89273 &lt;unknown&gt;
+#15 0x62cbcea58362 &lt;unknown&gt;
+#16 0x62cbcea5933e &lt;unknown&gt;
+#17 0x62cbceec32df &lt;unknown&gt;
+#18 0x62cbceec7de2 &lt;unknown&gt;
+#19 0x62cbceeb1167 &lt;unknown&gt;
+#20 0x62cbceec8561 &lt;unknown&gt;
+#21 0x62cbcee982de &lt;unknown&gt;
+#22 0x62cbceee3b78 &lt;unknown&gt;
+#23 0x62cbceee3d7a &lt;unknown&gt;
+#24 0x62cbceef357c &lt;unknown&gt;
+#25 0x7c89c2294ac3 &lt;unknown&gt;
 </status>
 </test>
 <kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2024-11-14T09:52:17.516193" elapsed="0.560690"/>
+<status status="PASS" start="2024-11-14T09:57:16.762970" elapsed="0.064577"/>
 </kw>
-<status status="FAIL" start="2024-11-14T09:52:14.539865" elapsed="3.537225"/>
+<status status="FAIL" start="2024-11-14T09:57:15.691377" elapsed="1.136359"/>
 </suite>
 <suite id="s1-s2" name="Reset" source="/home/ketolana/ohtu/palautusrepositorio/webcounter/src/tests/reset.robot">
 <kw name="Open And Configure Browser" owner="resource" type="SETUP">
 <if>
 <branch type="IF" condition="$BROWSER == 'chrome'">
 <kw name="Evaluate" owner="BuiltIn">
-<msg time="2024-11-14T09:52:18.084376" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x739c41f5dba0&gt;</msg>
+<msg time="2024-11-14T09:57:16.835070" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x724f0c729c00&gt;</msg>
 <var>${options}</var>
 <arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
 <arg>sys</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2024-11-14T09:52:18.083798" elapsed="0.000653"/>
+<status status="PASS" start="2024-11-14T09:57:16.834503" elapsed="0.000650"/>
 </kw>
-<status status="PASS" start="2024-11-14T09:52:18.083306" elapsed="0.001281"/>
+<status status="PASS" start="2024-11-14T09:57:16.834022" elapsed="0.001271"/>
 </branch>
 <branch type="ELSE IF" condition="$BROWSER == 'firefox'">
 <kw name="Evaluate" owner="BuiltIn">
@@ -423,167 +423,167 @@ Stacktrace:
 <arg>sys.modules['selenium.webdriver'].FirefoxOptions()</arg>
 <arg>sys</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="NOT RUN" start="2024-11-14T09:52:18.084909" elapsed="0.000062"/>
+<status status="NOT RUN" start="2024-11-14T09:57:16.835617" elapsed="0.000057"/>
 </kw>
-<status status="NOT RUN" start="2024-11-14T09:52:18.084672" elapsed="0.000418"/>
+<status status="NOT RUN" start="2024-11-14T09:57:16.835382" elapsed="0.000390"/>
 </branch>
-<status status="PASS" start="2024-11-14T09:52:18.083261" elapsed="0.001900"/>
+<status status="PASS" start="2024-11-14T09:57:16.833978" elapsed="0.001910"/>
 </if>
 <if>
 <branch type="IF" condition="$HEADLESS == 'true'">
 <kw name="Set Selenium Speed" owner="SeleniumLibrary">
 <arg>0</arg>
 <doc>Sets the delay that is waited after each Selenium command.</doc>
-<status status="NOT RUN" start="2024-11-14T09:52:18.085648" elapsed="0.000061"/>
+<status status="PASS" start="2024-11-14T09:57:16.836360" elapsed="0.000335"/>
 </kw>
 <kw name="Call Method" owner="BuiltIn">
 <arg>${options}</arg>
 <arg>add_argument</arg>
 <arg>--headless</arg>
 <doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="NOT RUN" start="2024-11-14T09:52:18.085911" elapsed="0.000056"/>
+<status status="PASS" start="2024-11-14T09:57:16.836925" elapsed="0.000312"/>
 </kw>
-<status status="NOT RUN" start="2024-11-14T09:52:18.085273" elapsed="0.000804"/>
+<status status="PASS" start="2024-11-14T09:57:16.835999" elapsed="0.001345"/>
 </branch>
 <branch type="ELSE">
 <kw name="Set Selenium Speed" owner="SeleniumLibrary">
 <arg>${DELAY}</arg>
 <doc>Sets the delay that is waited after each Selenium command.</doc>
-<status status="PASS" start="2024-11-14T09:52:18.086332" elapsed="0.000490"/>
+<status status="NOT RUN" start="2024-11-14T09:57:16.837605" elapsed="0.000055"/>
 </kw>
-<status status="PASS" start="2024-11-14T09:52:18.086150" elapsed="0.000780"/>
+<status status="NOT RUN" start="2024-11-14T09:57:16.837421" elapsed="0.000325"/>
 </branch>
-<status status="PASS" start="2024-11-14T09:52:18.085244" elapsed="0.001754"/>
+<status status="PASS" start="2024-11-14T09:57:16.835970" elapsed="0.001834"/>
 </if>
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2024-11-14T09:52:18.087774" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
+<msg time="2024-11-14T09:57:16.838511" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
 <arg>browser=${BROWSER}</arg>
 <arg>options=${options}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2024-11-14T09:52:18.087232" elapsed="0.645174"/>
+<status status="PASS" start="2024-11-14T09:57:16.838005" elapsed="0.347671"/>
 </kw>
-<status status="PASS" start="2024-11-14T09:52:18.082926" elapsed="0.649636"/>
+<status status="PASS" start="2024-11-14T09:57:16.833643" elapsed="0.352202"/>
 </kw>
 <test id="s1-s2-t1" name="When counter has a nonzero value and it is reset the value becomes zero" line="7">
 <kw name="Go To" owner="SeleniumLibrary">
-<msg time="2024-11-14T09:52:18.733392" level="INFO">Opening url 'http://localhost:5001'</msg>
-<msg time="2024-11-14T09:52:19.489311" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-5.png"&gt;&lt;img src="selenium-screenshot-5.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg time="2024-11-14T09:52:19.489729" level="FAIL">WebDriverException: Message: unknown error: net::ERR_CONNECTION_REFUSED
+<msg time="2024-11-14T09:57:17.186625" level="INFO">Opening url 'http://localhost:5001'</msg>
+<msg time="2024-11-14T09:57:17.410627" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-9.png"&gt;&lt;img src="selenium-screenshot-9.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2024-11-14T09:57:17.410913" level="FAIL">WebDriverException: Message: unknown error: net::ERR_CONNECTION_REFUSED
   (Session info: chrome=130.0.6723.116)
 Stacktrace:
-#0 0x5aaf6229e8ca &lt;unknown&gt;
-#1 0x5aaf61dc3860 &lt;unknown&gt;
-#2 0x5aaf61dbba61 &lt;unknown&gt;
-#3 0x5aaf61dac278 &lt;unknown&gt;
-#4 0x5aaf61dadf8a &lt;unknown&gt;
-#5 0x5aaf61dac51a &lt;unknown&gt;
-#6 0x5aaf61dabe14 &lt;unknown&gt;
-#7 0x5aaf61dabd32 &lt;unknown&gt;
-#8 0x5aaf61da9e2c &lt;unknown&gt;
-#9 0x5aaf61daa47a &lt;unknown&gt;
-#10 0x5aaf61dc6109 &lt;unknown&gt;
-#11 0x5aaf61e52705 &lt;unknown&gt;
-#12 0x5aaf61e334d2 &lt;unknown&gt;
-#13 0x5aaf61e51a9b &lt;unknown&gt;
-#14 0x5aaf61e33273 &lt;unknown&gt;
-#15 0x5aaf61e02362 &lt;unknown&gt;
-#16 0x5aaf61e0333e &lt;unknown&gt;
-#17 0x5aaf6226d2df &lt;unknown&gt;
-#18 0x5aaf62271de2 &lt;unknown&gt;
-#19 0x5aaf6225b167 &lt;unknown&gt;
-#20 0x5aaf62272561 &lt;unknown&gt;
-#21 0x5aaf622422de &lt;unknown&gt;
-#22 0x5aaf6228db78 &lt;unknown&gt;
-#23 0x5aaf6228dd7a &lt;unknown&gt;
-#24 0x5aaf6229d57c &lt;unknown&gt;
-#25 0x7ddf1e894ac3 &lt;unknown&gt;
+#0 0x5fc190abd8ca &lt;unknown&gt;
+#1 0x5fc1905e2860 &lt;unknown&gt;
+#2 0x5fc1905daa61 &lt;unknown&gt;
+#3 0x5fc1905cb278 &lt;unknown&gt;
+#4 0x5fc1905ccf8a &lt;unknown&gt;
+#5 0x5fc1905cb51a &lt;unknown&gt;
+#6 0x5fc1905cae14 &lt;unknown&gt;
+#7 0x5fc1905cad32 &lt;unknown&gt;
+#8 0x5fc1905c8e2c &lt;unknown&gt;
+#9 0x5fc1905c947a &lt;unknown&gt;
+#10 0x5fc1905e5109 &lt;unknown&gt;
+#11 0x5fc190671705 &lt;unknown&gt;
+#12 0x5fc1906524d2 &lt;unknown&gt;
+#13 0x5fc190670a9b &lt;unknown&gt;
+#14 0x5fc190652273 &lt;unknown&gt;
+#15 0x5fc190621362 &lt;unknown&gt;
+#16 0x5fc19062233e &lt;unknown&gt;
+#17 0x5fc190a8c2df &lt;unknown&gt;
+#18 0x5fc190a90de2 &lt;unknown&gt;
+#19 0x5fc190a7a167 &lt;unknown&gt;
+#20 0x5fc190a91561 &lt;unknown&gt;
+#21 0x5fc190a612de &lt;unknown&gt;
+#22 0x5fc190aacb78 &lt;unknown&gt;
+#23 0x5fc190aacd7a &lt;unknown&gt;
+#24 0x5fc190abc57c &lt;unknown&gt;
+#25 0x7a3581094ac3 &lt;unknown&gt;
 </msg>
 <arg>${HOME_URL}</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<status status="FAIL" start="2024-11-14T09:52:18.733185" elapsed="0.756921">WebDriverException: Message: unknown error: net::ERR_CONNECTION_REFUSED
+<status status="FAIL" start="2024-11-14T09:57:17.186423" elapsed="0.224749">WebDriverException: Message: unknown error: net::ERR_CONNECTION_REFUSED
   (Session info: chrome=130.0.6723.116)
 Stacktrace:
-#0 0x5aaf6229e8ca &lt;unknown&gt;
-#1 0x5aaf61dc3860 &lt;unknown&gt;
-#2 0x5aaf61dbba61 &lt;unknown&gt;
-#3 0x5aaf61dac278 &lt;unknown&gt;
-#4 0x5aaf61dadf8a &lt;unknown&gt;
-#5 0x5aaf61dac51a &lt;unknown&gt;
-#6 0x5aaf61dabe14 &lt;unknown&gt;
-#7 0x5aaf61dabd32 &lt;unknown&gt;
-#8 0x5aaf61da9e2c &lt;unknown&gt;
-#9 0x5aaf61daa47a &lt;unknown&gt;
-#10 0x5aaf61dc6109 &lt;unknown&gt;
-#11 0x5aaf61e52705 &lt;unknown&gt;
-#12 0x5aaf61e334d2 &lt;unknown&gt;
-#13 0x5aaf61e51a9b &lt;unknown&gt;
-#14 0x5aaf61e33273 &lt;unknown&gt;
-#15 0x5aaf61e02362 &lt;unknown&gt;
-#16 0x5aaf61e0333e &lt;unknown&gt;
-#17 0x5aaf6226d2df &lt;unknown&gt;
-#18 0x5aaf62271de2 &lt;unknown&gt;
-#19 0x5aaf6225b167 &lt;unknown&gt;
-#20 0x5aaf62272561 &lt;unknown&gt;
-#21 0x5aaf622422de &lt;unknown&gt;
-#22 0x5aaf6228db78 &lt;unknown&gt;
-#23 0x5aaf6228dd7a &lt;unknown&gt;
-#24 0x5aaf6229d57c &lt;unknown&gt;
-#25 0x7ddf1e894ac3 &lt;unknown&gt;
+#0 0x5fc190abd8ca &lt;unknown&gt;
+#1 0x5fc1905e2860 &lt;unknown&gt;
+#2 0x5fc1905daa61 &lt;unknown&gt;
+#3 0x5fc1905cb278 &lt;unknown&gt;
+#4 0x5fc1905ccf8a &lt;unknown&gt;
+#5 0x5fc1905cb51a &lt;unknown&gt;
+#6 0x5fc1905cae14 &lt;unknown&gt;
+#7 0x5fc1905cad32 &lt;unknown&gt;
+#8 0x5fc1905c8e2c &lt;unknown&gt;
+#9 0x5fc1905c947a &lt;unknown&gt;
+#10 0x5fc1905e5109 &lt;unknown&gt;
+#11 0x5fc190671705 &lt;unknown&gt;
+#12 0x5fc1906524d2 &lt;unknown&gt;
+#13 0x5fc190670a9b &lt;unknown&gt;
+#14 0x5fc190652273 &lt;unknown&gt;
+#15 0x5fc190621362 &lt;unknown&gt;
+#16 0x5fc19062233e &lt;unknown&gt;
+#17 0x5fc190a8c2df &lt;unknown&gt;
+#18 0x5fc190a90de2 &lt;unknown&gt;
+#19 0x5fc190a7a167 &lt;unknown&gt;
+#20 0x5fc190a91561 &lt;unknown&gt;
+#21 0x5fc190a612de &lt;unknown&gt;
+#22 0x5fc190aacb78 &lt;unknown&gt;
+#23 0x5fc190aacd7a &lt;unknown&gt;
+#24 0x5fc190abc57c &lt;unknown&gt;
+#25 0x7a3581094ac3 &lt;unknown&gt;
 </status>
 </kw>
 <kw name="Click Button" owner="SeleniumLibrary">
 <arg>Paina</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="NOT RUN" start="2024-11-14T09:52:19.490601" elapsed="0.000078"/>
+<status status="NOT RUN" start="2024-11-14T09:57:17.411561" elapsed="0.000059"/>
 </kw>
 <kw name="Click Button" owner="SeleniumLibrary">
 <arg>Nollaa</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="NOT RUN" start="2024-11-14T09:52:19.490952" elapsed="0.000058"/>
+<status status="NOT RUN" start="2024-11-14T09:57:17.411853" elapsed="0.000043"/>
 </kw>
 <kw name="Page Should Contain" owner="SeleniumLibrary">
 <arg>nappia painettu 0 kertaa</arg>
 <doc>Verifies that current page contains ``text``.</doc>
-<status status="NOT RUN" start="2024-11-14T09:52:19.491269" elapsed="0.000053"/>
+<status status="NOT RUN" start="2024-11-14T09:57:17.412083" elapsed="0.000039"/>
 </kw>
-<status status="FAIL" start="2024-11-14T09:52:18.732669" elapsed="0.759026">WebDriverException: Message: unknown error: net::ERR_CONNECTION_REFUSED
+<status status="FAIL" start="2024-11-14T09:57:17.185956" elapsed="0.226457">WebDriverException: Message: unknown error: net::ERR_CONNECTION_REFUSED
   (Session info: chrome=130.0.6723.116)
 Stacktrace:
-#0 0x5aaf6229e8ca &lt;unknown&gt;
-#1 0x5aaf61dc3860 &lt;unknown&gt;
-#2 0x5aaf61dbba61 &lt;unknown&gt;
-#3 0x5aaf61dac278 &lt;unknown&gt;
-#4 0x5aaf61dadf8a &lt;unknown&gt;
-#5 0x5aaf61dac51a &lt;unknown&gt;
-#6 0x5aaf61dabe14 &lt;unknown&gt;
-#7 0x5aaf61dabd32 &lt;unknown&gt;
-#8 0x5aaf61da9e2c &lt;unknown&gt;
-#9 0x5aaf61daa47a &lt;unknown&gt;
-#10 0x5aaf61dc6109 &lt;unknown&gt;
-#11 0x5aaf61e52705 &lt;unknown&gt;
-#12 0x5aaf61e334d2 &lt;unknown&gt;
-#13 0x5aaf61e51a9b &lt;unknown&gt;
-#14 0x5aaf61e33273 &lt;unknown&gt;
-#15 0x5aaf61e02362 &lt;unknown&gt;
-#16 0x5aaf61e0333e &lt;unknown&gt;
-#17 0x5aaf6226d2df &lt;unknown&gt;
-#18 0x5aaf62271de2 &lt;unknown&gt;
-#19 0x5aaf6225b167 &lt;unknown&gt;
-#20 0x5aaf62272561 &lt;unknown&gt;
-#21 0x5aaf622422de &lt;unknown&gt;
-#22 0x5aaf6228db78 &lt;unknown&gt;
-#23 0x5aaf6228dd7a &lt;unknown&gt;
-#24 0x5aaf6229d57c &lt;unknown&gt;
-#25 0x7ddf1e894ac3 &lt;unknown&gt;
+#0 0x5fc190abd8ca &lt;unknown&gt;
+#1 0x5fc1905e2860 &lt;unknown&gt;
+#2 0x5fc1905daa61 &lt;unknown&gt;
+#3 0x5fc1905cb278 &lt;unknown&gt;
+#4 0x5fc1905ccf8a &lt;unknown&gt;
+#5 0x5fc1905cb51a &lt;unknown&gt;
+#6 0x5fc1905cae14 &lt;unknown&gt;
+#7 0x5fc1905cad32 &lt;unknown&gt;
+#8 0x5fc1905c8e2c &lt;unknown&gt;
+#9 0x5fc1905c947a &lt;unknown&gt;
+#10 0x5fc1905e5109 &lt;unknown&gt;
+#11 0x5fc190671705 &lt;unknown&gt;
+#12 0x5fc1906524d2 &lt;unknown&gt;
+#13 0x5fc190670a9b &lt;unknown&gt;
+#14 0x5fc190652273 &lt;unknown&gt;
+#15 0x5fc190621362 &lt;unknown&gt;
+#16 0x5fc19062233e &lt;unknown&gt;
+#17 0x5fc190a8c2df &lt;unknown&gt;
+#18 0x5fc190a90de2 &lt;unknown&gt;
+#19 0x5fc190a7a167 &lt;unknown&gt;
+#20 0x5fc190a91561 &lt;unknown&gt;
+#21 0x5fc190a612de &lt;unknown&gt;
+#22 0x5fc190aacb78 &lt;unknown&gt;
+#23 0x5fc190aacd7a &lt;unknown&gt;
+#24 0x5fc190abc57c &lt;unknown&gt;
+#25 0x7a3581094ac3 &lt;unknown&gt;
 </status>
 </test>
 <kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2024-11-14T09:52:19.492610" elapsed="0.558242"/>
+<status status="PASS" start="2024-11-14T09:57:17.413131" elapsed="0.064600"/>
 </kw>
-<status status="FAIL" start="2024-11-14T09:52:18.078375" elapsed="1.972697"/>
+<status status="FAIL" start="2024-11-14T09:57:16.828950" elapsed="0.648996"/>
 </suite>
-<status status="FAIL" start="2024-11-14T09:52:14.523255" elapsed="5.529368"/>
+<status status="FAIL" start="2024-11-14T09:57:15.674811" elapsed="1.804478"/>
 </suite>
 <statistics>
 <total>

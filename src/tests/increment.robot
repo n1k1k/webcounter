@@ -18,5 +18,5 @@ When button pressed twice the counter is two
 When value set the counter is value
     Go To  ${HOME_URL}
     Input Text  value  10
-    Click Button    Submit
+    Click Button    Aseta
     Page Should Contain  nappia painettu 10 kertaa
