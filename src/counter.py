@@ -16,4 +16,4 @@ class Counter:
         self.value = self._initial_value
 
     def set(self, value):
-        self.value = value
+        self.value = int(value)
